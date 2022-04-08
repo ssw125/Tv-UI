@@ -1,9 +1,9 @@
 <template>
 <Teleport to="#app">
 <Transition name="mask">
-    <div class=" absolute h-full w-full bg-black opacity-60 flex justify-center" v-show="display??true">
+    <div class=" absolute h-full w-full bg-black opacity-60 flex justify-center" v-show="modelValue??true">
         <Transition name="pannel">
-        <div class=" h-60 w-1/3 mt-20 bg-white px-7 py-5 rounded-sm min-w-fit" v-show="display??true">
+        <div class=" h-60 w-1/3 mt-20 bg-white px-7 py-5 rounded-sm min-w-fit" v-show="modelValue??true">
             <div class=" flex items-center justify-between md:truncate">
                 <span class=" text-xl">{{title??"标题"}}</span>
                 <span @click="close"> <svg viewBox="0 0 1024 1024" class="h-4 w-4 hover:text-blue-400"
@@ -27,17 +27,17 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 defineProps<{
-    display?:boolean,
+    modelValue?:boolean,
     config?:(payload?: MouseEvent) => void,
     cancel?:(payload?: MouseEvent) => void,
     title?:string,
     content?:string,
 
 }>()
-const emit = defineEmits({"update:display":null})
+const emit = defineEmits({"update:modelValue":null})
 const close = ()=>{
     console.log("aaa")
-    emit("update:display",false)
+    emit("update:modelValue",false)
 }
 const show = ref()
 </script>

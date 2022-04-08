@@ -77,7 +77,7 @@ onMounted(()=>{
      :class="[btn_type_config,shape_btn,size_btn]" class="border-2 flex-row flex items-center focus:ring-2 focus:ring-offset-1 font-medium text-base outline-none">
         <i v-if="icon" style="height:1.2em;width:1.2em;margin-right:3px">
             <slot name="icon">
-                <edit/>
+               
             </slot>
          </i>
         <slot><span></span></slot>

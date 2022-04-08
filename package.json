@@ -9,8 +9,6 @@
     "tcss": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch"
   },
   "dependencies": {
-    "@element-plus/icons-vue": "^1.1.4",
-    "element-plus": "^2.1.8",
     "vue": "^3.2.25"
   },
   "devDependencies": {
