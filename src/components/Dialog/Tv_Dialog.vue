@@ -1,4 +1,5 @@
 <template>
+<Teleport to="#app">
 <Transition name="mask">
     <div class=" absolute h-full w-full bg-black opacity-60 flex justify-center" v-show="display??true">
         <Transition name="pannel">
@@ -20,6 +21,7 @@
         </Transition>
     </div>
 </Transition>
+</Teleport>
 </template>
 
 <script setup lang="ts">
