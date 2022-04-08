@@ -1,0 +1,29 @@
+{
+  "name": "tv-ui",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "tcss": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^1.1.4",
+    "element-plus": "^2.1.8",
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.0",
+    "autoprefixer": "^10.4.4",
+    "postcss": "^8.4.12",
+    "tailwindcss": "^3.0.23",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.0",
+    "vue-tsc": "^0.29.8"
+  },
+  "description": "This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
+}
