@@ -1,10 +1,19 @@
 <script setup lang="ts">
   import { ref } from 'vue';
+  import {throttle} from 'lodash-es'
   const show = ref(false)
   const btn_click = ()=>{
       show.value = true
   }
   const text = ref("ssw")
+  const as = ()=>{
+    return new Promise((reslove,reject)=>{
+      setTimeout(()=>{
+        console.log("设置定时器了")
+        reslove([1,2,23])
+      },2000)
+    })
+  }
 </script>
 
 <template>
@@ -37,13 +46,21 @@
 <!-- clearable  -->
 <!-- v-model 双向绑定 -->
 <!--disable  -->
+<!-- length 最大输入长度 -->
 
 <!-- #left插槽 input框的左侧icon图标 -->
-<Tv-input placeholder="hahahah" clearable v-model="text">
-  <template #left>
+<Tv-input placeholder="hahahah"  size="min" v-model="text">
+  <!-- <template #left>
     <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-ba633cb8=""><path fill="currentColor" d="m795.904 750.72 124.992 124.928a32 32 0 0 1-45.248 45.248L750.656 795.904a416 416 0 1 1 45.248-45.248zM480 832a352 352 0 1 0 0-704 352 352 0 0 0 0 704z"></path></svg>
-  </template>
+  </template> -->
 </Tv-input>
+
+<!-- size 尺寸大小-->
+<!-- suggestion 手动设置下拉框存在哪些值-->
+<!-- querySearch 传入一个返回Promise的函数，类似于搜索框的功能 优先级大于suggestion (建议使用节流函数对函数进行处理，再传入)-->
+
+<!-- 匹配首字母 不区分大小写 -->
+<Tv-autoComplete :suggestion="['vue','React','vuex']" size="middle" :querySearch="throttle(as,500)"></Tv-autoComplete>
 </div>
 </template>
 
