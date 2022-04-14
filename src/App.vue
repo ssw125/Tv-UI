@@ -3,14 +3,14 @@
   import {throttle} from 'lodash-es'
   const show = ref(false)
   const btn_click = ()=>{
-      show.value = true
+      show.value = !show.value
   }
   const text = ref("ssw")
   const as = ()=>{
     return new Promise((reslove,reject)=>{
       setTimeout(()=>{
         console.log("设置定时器了")
-        reslove([1,2,23])
+        reslove([1,2,23]) 
       },2000)
     })
   }
@@ -39,7 +39,7 @@
 <!-- config 点击确认执行的函数 -->
 <!-- title 对话框题目 -->
 <!-- content 对话框内容 -->
-<Tv-dialog v-model="show"></Tv-dialog>
+<Tv-dialog></Tv-dialog>
 
 <!-- size 尺寸  big min middle-->
 <!-- placeholder  -->
@@ -61,8 +61,22 @@
 
 <!-- 匹配首字母 不区分大小写 -->
 <Tv-autoComplete :suggestion="['vue','React','vuex']" size="middle" :querySearch="throttle(as,500)"></Tv-autoComplete>
+
+
+<!-- closable 是否有关闭按钮 -->
+<!-- type 不同类型的提示框  -->
+<!-- content 提示内容 -->
+<!-- closeEvent  点击关闭按钮调用的函数-->
+
+<!-- 默认插槽 可以通过默认插槽插入弹框内容-->
+<!-- icon插槽 可以修改默认ic0n-->
+<Tv-alert v-model="show" type="warning" closable></Tv-alert>
+
 </div>
 </template>
+
+
+
 
 <style>
 #app{

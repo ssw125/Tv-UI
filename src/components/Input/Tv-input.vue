@@ -16,8 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from '@vue/reactivity';
-import {onMounted,ref,useSlots} from 'vue';
+import {onMounted,ref,useSlots,computed} from 'vue';
 import {sizeType} from '../type'
 const props  = defineProps<{
         size?:sizeType,

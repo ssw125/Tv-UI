@@ -1,7 +1,7 @@
 <template>
-<Teleport to="#app">
+<Teleport to="body">
 <Transition name="mask">
-    <div class=" absolute h-full w-full bg-black opacity-60 flex justify-center" v-show="modelValue??true">
+    <div class=" absolute h-full w-full bg-black opacity-60 flex justify-center top-0" v-show="modelValue??true">
         <Transition name="pannel">
         <div class=" h-60 w-1/3 mt-20 bg-white px-7 py-5 rounded-sm min-w-fit" v-show="modelValue??true">
             <div class=" flex items-center justify-between md:truncate">
@@ -36,7 +36,6 @@ defineProps<{
 }>()
 const emit = defineEmits({"update:modelValue":null})
 const close = ()=>{
-    console.log("aaa")
     emit("update:modelValue",false)
 }
 const show = ref()
